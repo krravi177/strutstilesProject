@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" 
+ "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+    <form-beans>
+        <form-bean name="lb" type="max.LoginBean"/>
+        <form-bean name="vf" type="visitor.VisitorBean"></form-bean>
+            </form-beans>
+
+     <action-mappings>
+     <action path="/login" name="lb" parameter="method" type="max.LoginAction">
+     <forward name="admin" path="tadmin"/>
+     <forward name="user" path="tuser"/>
+     </action>   
+        
+       <action path="/visitormgt" name="vf" parameter="method" type="visitor.VisitorAction">
+       <forward name="vEntry" path="tvEntry"></forward>
+       <forward name="vdEntry" path="tvEntry"></forward>
+       </action> 
+       
+       <action path="/viewVisitor" name="vf" parameter="method" type="visitor.ViewVisitorAction">
+       <forward name="view" path="tview"></forward>
+       <forward name="search" path="tsearch"></forward>
+       
+       </action> 
+        
+    </action-mappings>
+    
+    
+    <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
+	<!-- <message-resources  parameter="ApplicationResources"  null="false"  /> -->
+		
+	 <plug-in className="org.apache.struts.tiles.TilesPlugin" >
+        <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />      
+        <set-property property="moduleAware" value="true" />
+    </plug-in>
+      	
+</struts-config>

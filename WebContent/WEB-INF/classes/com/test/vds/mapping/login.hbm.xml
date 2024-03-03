@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="com.test.vds.dto.LoginDTO" table="VDS_LOGIN">
+		<id name="vdsUserName" length="20" column="USER_NAME" >
+			<generator class="assigned" />
+		</id>
+		<property name="vdsPassword" length="20"	column="PASSWORD" />
+		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,38 @@
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 1.3//EN"
+"http://struts.apache.org/dtds/tiles-config_1_3.dtd">
+
+<tiles-definitions>
+<definition name="adminlayout" template="/admin/aLayout.jsp">
+<put name="ah" value="/admin/header.jsp"/>
+<put name="am" value="/admin/leftMenu.jsp"/>
+<put name="ab" value="/admin/body.jsp"/>
+<put name="af" value="/admin/footer.jsp"/>
+</definition>
+
+<definition name="tadmin" extends="adminlayout">
+
+<put name="ab" value="/WEB-INF/jsp/awel.jsp"/>
+</definition>
+
+<definition name="tuser" extends="adminlayout">
+
+<put name="ab" value="/WEB-INF/jsp/uwel.jsp"/>
+</definition>
+
+<definition name="tvEntry" extends="adminlayout">
+
+<put name="ab" value="/WEB-INF/jsp/visitorEntry.jsp"></put>
+</definition>
+
+<definition name="tview" extends="adminlayout">
+<put name="ab" value="/WEB-INF/jsp/vieww.jsp"></put>
+</definition>
+<definition name="tsearch" extends="adminlayout">
+<put name="ab" value="/WEB-INF/jsp/search.jsp"></put>
+
+
+</definition>
+	
+	
+</tiles-definitions>
